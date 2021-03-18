@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Test the generation of yadism/version.py by setup.py.
+Test the generation of {{ cookiecutter.project_slug }}/version.py by setup.py.
 """
 import pathlib
 
