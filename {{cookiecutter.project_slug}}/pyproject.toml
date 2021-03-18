@@ -8,7 +8,7 @@ python_files = ['test_*.py']
 python_classes = ['Test*']
 python_functions = ['test_*']
 addopts = [
-{%- if cookiecutter.upload_codecov %}
+{%- if cookiecutter.upload_to_codecov %}
   '--cov={{ cookiecutter.project_slug }}',
   '--cov-report=html',
   '--cov-report=xml',
