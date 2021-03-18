@@ -5,7 +5,7 @@
   "project_name": "My Python Package",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "My shiny new python package.",
-  "pypi_username": "{{ cookiecutter.github_username }}",
+  "pypi_username": "Annibale",
   "version": "0.0.1",
   "open_source_license": [
     "MIT license",
