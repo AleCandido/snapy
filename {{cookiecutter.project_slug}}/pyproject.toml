@@ -1,0 +1,21 @@
+[build-system]
+requires = ['setuptools >= 40.9.0', 'wheel', 'packutil']
+build-backend = 'setuptools.build_meta'
+
+[tool.pytest.ini_options]
+testpaths = ['tests/']
+python_files = ['test_*.py']
+python_classes = ['Test*']
+python_functions = ['test_*']
+addopts = [
+{%- if cookiecutter.upload_codecov %}
+  '--cov={{ cookiecutter.project_slug }}',
+  '--cov-report=html',
+  '--cov-report=xml',
+{%- endif %}
+  '--strict-markers',
+]
+markers = [
+  'quick_check: marks test for quick',
+  'full: marks test to be run only with the full-suite',
+]
