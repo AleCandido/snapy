@@ -14,14 +14,14 @@ jobs:
         os: [ubuntu-latest]
         python-version: [3.8]
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ '{{' }} matrix.os {{ '}}' }}
 
     steps:
       - uses: actions/checkout@master
       - name: Setup Python 🐍
         uses: actions/setup-python@master
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ '{{' }} matrix.python-version {{ '}}' }}
       - name: Install package
         run: |
           pip install -e .
@@ -32,4 +32,4 @@ jobs:
       - name: Publish distribution 📦 to PyPI
         uses: pypa/gh-action-pypi-publish@master
         with:
-          password: ${{ secrets.PYPI_TOKEN }}
+          password: ${{ '{{' }} secrets.PYPI_TOKEN {{ '}}' }}

@@ -21,16 +21,16 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-          token: ${{ github.token }}
+          token: ${{ '{{' }} github.token {{ '}}' }}
           submodules: "true"
       - name: Set up Node 🧶
         uses: actions/setup-node@v2-beta
         with:
           node-version: "12"
-      - name: Set up Python ${{ matrix.python-version }} 🐍
+      - name: Set up Python ${{ '{{' }} matrix.python-version {{ '}}' }} 🐍
         uses: actions/setup-python@v1
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ '{{' }} matrix.python-version {{ '}}' }}
       - name: Install package 📦
         # prevent fail-fast: allow pip upgrade to fail
         shell: bash {0}
@@ -47,6 +47,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          ACCESS_TOKEN: ${{ github.token }}
+          ACCESS_TOKEN: ${{ '{{' }} github.token {{ '}}' }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: "docs/build/html" # The folder the action should deploy.

@@ -2,7 +2,7 @@
   "full_name": "Alessandro Candido",
   "email": "candido.ale@gmail.com",
   "github_username": "AleCandido",
-  "project_name": "My Python Pakcage",
+  "project_name": "My Python Package",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "My shiny new python package.",
   "pypi_username": "{{ cookiecutter.github_username }}",
